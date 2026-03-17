@@ -7,6 +7,7 @@ A collection of Claude Code skills by [@huunghiaish](https://github.com/huunghia
 | Skill | Description |
 |-------|-------------|
 | [`ng:audit-product-feature`](./audit-product-feature/) | Audit software projects for feature completeness, edge cases, and business logic risks. Compares PRD/SRS against actual code, detects missing edge cases, generates scored reports. |
+| [`ng:prompt-extractor`](./prompt-extractor/) | Reverse-engineer prompts from vibe-coded projects. Analyze original requirements vs AI-generated docs/code to extract reusable prompt sequences with purpose and execution order. |
 
 ## Installation
 
@@ -43,6 +44,9 @@ Once installed, invoke skills via slash command in Claude Code:
 
 # Vietnamese output
 /ng:audit-product-feature audit project này, viết báo cáo tiếng Việt
+
+# Extract prompts from a vibe-coded project
+/ng:prompt-extractor
 ```
 
 Skills also activate automatically based on natural language:
