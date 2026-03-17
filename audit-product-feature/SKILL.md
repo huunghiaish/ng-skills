@@ -92,6 +92,21 @@ Follow template in `references/report-template.md`.
 
 ## General Rules
 
+- Every output file MUST start with a **Reference Documents** section:
+  ```
+  ## Reference Documents
+  ### Original Requirements (source of truth)
+  - `docs/project-overview-pdr.md` — selected by user
+  - `requirements/srs.md` — selected by user
+
+  ### AI-Generated Docs (under audit)
+  - `docs/system-architecture.md` — compared against requirements
+  - `docs/code-standards.md` — compared against requirements
+
+  ### Source Code
+  - `src/` — explored for implementation verification
+  ```
+- Every finding MUST cite which docs are being compared (e.g., "PRD §3.2 vs docs/system-architecture.md §API Design")
 - Always cite sources: specify which file when flagging issues
 - Do not mark HIGH if an easy workaround exists — use MEDIUM
 - When docs are missing, infer from code and mark "(inferred from code)"
