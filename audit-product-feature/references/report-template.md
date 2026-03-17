@@ -1,6 +1,6 @@
 # Template: REPORT.md
 
-Use this structure when creating `output/REPORT.md`.
+Use this structure when creating the report file.
 Keep concise — max 1 A4 page when printed.
 
 ---
@@ -59,5 +59,5 @@ Keep concise — max 1 A4 page when printed.
 
 ---
 
-*Full details: see AUDIT.md and OVERVIEW.md*
+*Full details: see audit and overview files in plans/reports/*
 ```

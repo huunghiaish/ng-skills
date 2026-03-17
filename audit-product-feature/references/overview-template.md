@@ -1,6 +1,6 @@
 # Template: OVERVIEW.md
 
-Use this structure when creating `output/OVERVIEW.md`.
+Use this structure when creating the overview file.
 
 ---
 
