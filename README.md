@@ -9,6 +9,7 @@ A collection of Claude Code skills by [@huunghiaish](https://github.com/huunghia
 | [`ng:audit-product-feature`](./audit-product-feature/) | Audit software projects for feature completeness, edge cases, and business logic risks. Compares PRD/SRS against actual code, detects missing edge cases, generates scored reports. |
 | [`ng:prompt-extractor`](./prompt-extractor/) | Reverse-engineer prompts from vibe-coded projects. Analyze original requirements vs AI-generated docs/code to extract reusable prompt sequences with purpose and execution order. |
 | [`ng:enhance-prompt`](./enhance-prompt/) | Transforms vague UI ideas into polished, optimized prompts. Forked from [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt). |
+| [`ng:seo`](./seo/) | SEO audit toolkit — full site, single page, content quality, technical, images, pre-upload audit. Forked from [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo). |
 
 ## Installation
 
@@ -48,6 +49,11 @@ Once installed, invoke skills via slash command in Claude Code:
 
 # Extract prompts from a vibe-coded project
 /ng:prompt-extractor
+
+# SEO audit
+/ng:seo audit https://example.com
+/ng:seo page https://example.com/blog/post
+/ng:seo human-content ./content/blog-post.md
 ```
 
 Skills also activate automatically based on natural language:
