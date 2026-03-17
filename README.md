@@ -8,6 +8,7 @@ A collection of Claude Code skills by [@huunghiaish](https://github.com/huunghia
 |-------|-------------|
 | [`ng:audit-product-feature`](./audit-product-feature/) | Audit software projects for feature completeness, edge cases, and business logic risks. Compares PRD/SRS against actual code, detects missing edge cases, generates scored reports. |
 | [`ng:prompt-extractor`](./prompt-extractor/) | Reverse-engineer prompts from vibe-coded projects. Analyze original requirements vs AI-generated docs/code to extract reusable prompt sequences with purpose and execution order. |
+| [`ng:enhance-prompt`](./enhance-prompt/) | Transforms vague UI ideas into polished, optimized prompts. Forked from [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt). |
 
 ## Installation
 
