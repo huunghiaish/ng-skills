@@ -1,7 +1,7 @@
 ---
 name: ng:port-manager
 description: "Manage dev server port allocations across projects. Assigns unique 10-port blocks (30000+) per project to prevent conflicts."
-argument-hint: "list|allocate|release|check|info"
+argument-hint: "list|allocate|release|check|info|env"
 allowed-tools: Read, Bash, Write, AskUserQuestion
 ---
 
@@ -26,7 +26,7 @@ Manage dev server port allocations. Each project gets a unique 10-port block sta
 
 ## Commands
 
-Parse `$ARGUMENTS` to determine which command to run. If empty or unrecognized, use `AskUserQuestion` to present: list, allocate, release, check, info.
+Parse `$ARGUMENTS` to determine which command to run. If empty or unrecognized, use `AskUserQuestion` to present: list, allocate, release, check, info, env.
 
 ### `list`
 
@@ -82,6 +82,33 @@ Parse `$ARGUMENTS` to determine which command to run. If empty or unrecognized, 
 2. Find CWD project
 3. If not found → "No allocation. Run `/ng:port-manager allocate`"
 4. Show: project name, path, block range, all service→port mappings, allocation date
+
+### `env`
+
+1. Read registry
+2. Find CWD project. If not found → suggest running `allocate` first
+3. Scan CWD for existing `.env`, `.env.example`, `.env.local`, `docker-compose.yml` files
+4. Generate `.env.example` content with allocated ports:
+   ```env
+   # Port Manager: {project-name} [{block-start}-{block-end}]
+   FRONTEND_PORT={+0}
+   BACKEND_PORT={+1}
+   DATABASE_PORT={+2}
+   REDIS_PORT={+3}
+   QUEUE_PORT={+4}
+   ADMIN_PORT={+5}
+   WEBSOCKET_PORT={+6}
+   ```
+5. If `.env.example` already exists → read it, find port-related vars (PORT, port, _PORT), and suggest updating them with allocated values. Use `AskUserQuestion` to confirm before overwriting
+6. If `.env.example` doesn't exist → create it with the generated content
+7. If `docker-compose.yml` exists → also show suggested port mappings for compose services:
+   ```
+   Suggested docker-compose port mappings:
+     frontend: "{+0}:3000"
+     backend: "{+1}:8000"
+     database: "{+2}:5432"
+     redis: "{+3}:6379"
+   ```
 
 ## Atomic Write Pattern
 
