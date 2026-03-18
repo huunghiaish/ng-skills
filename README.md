@@ -10,6 +10,7 @@ A collection of Claude Code skills by [@huunghiaish](https://github.com/huunghia
 | [`ng:prompt-extractor`](./prompt-extractor/) | Reverse-engineer prompts from vibe-coded projects. Analyze original requirements vs AI-generated docs/code to extract reusable prompt sequences with purpose and execution order. |
 | [`ng:enhance-prompt`](./enhance-prompt/) | Transforms vague UI ideas into polished, optimized prompts. Forked from [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt). |
 | [`ng:seo`](./seo/) | SEO audit toolkit — full site, single page, content quality, technical, images, pre-upload audit. Forked from [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo). |
+| [`ng:port-manager`](./port-manager/) | Manage dev server port allocations across projects. Assigns unique 10-port blocks (30000+) per project to prevent conflicts. Includes session-start hook for auto-detection. |
 
 ## Installation
 
@@ -54,6 +55,11 @@ Once installed, invoke skills via slash command in Claude Code:
 /ng:seo audit https://example.com
 /ng:seo page https://example.com/blog/post
 /ng:seo human-content ./content/blog-post.md
+
+# Port management
+/ng:port-manager allocate
+/ng:port-manager list
+/ng:port-manager check
 ```
 
 Skills also activate automatically based on natural language:
@@ -75,6 +81,17 @@ skill-name/
 ├── scripts/              # Executable tools (Python/Node.js)
 └── references/           # Detailed docs loaded as-needed
 ```
+
+## Global Components
+
+Some skills include components that install globally to `~/.claude/`:
+
+| Skill | Component | Location | Purpose |
+|-------|-----------|----------|---------|
+| `ng:port-manager` | Hook | `~/.claude/hooks/port-suggest.cjs` | Auto-detect project ports on session start |
+| `ng:port-manager` | Registry | `~/.claude/port-registry.json` | Port allocation data (created on first use) |
+
+These require manual installation — see each skill's README for setup instructions.
 
 ## Contributing
 
