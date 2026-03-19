@@ -1,13 +1,13 @@
 ---
 name: ng:port-manager
-description: "Manage dev server port allocations across projects. Assigns unique 10-port blocks (30000+) per project to prevent conflicts."
+description: "Manage dev server port allocations across projects. Assigns unique 10-port blocks (20000+) per project to prevent conflicts."
 argument-hint: "list|allocate|release|check|info|env"
 allowed-tools: Read, Bash, Write, AskUserQuestion
 ---
 
 # Port Manager
 
-Manage dev server port allocations. Each project gets a unique 10-port block starting at 30000.
+Manage dev server port allocations. Each project gets a unique 10-port block starting at 20000.
 
 **Registry:** `~/.claude/port-registry.json`
 
@@ -43,7 +43,7 @@ Parse `$ARGUMENTS` to determine which command to run. If empty or unrecognized, 
 
 1. Read registry. If missing, create default:
    ```json
-   {"version":1,"blockSize":10,"startPort":30000,"nextBlock":30000,"allocations":{}}
+   {"version":1,"blockSize":10,"startPort":20000,"nextBlock":20000,"allocations":{}}
    ```
 2. Check if CWD already allocated → show existing, ask to confirm re-allocate via `AskUserQuestion`
 3. Guard: if `nextBlock + blockSize - 1 > 65535` → error "Port range exhausted (max 65535). Release unused projects first."
