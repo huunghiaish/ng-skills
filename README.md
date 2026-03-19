@@ -10,7 +10,8 @@ A collection of Claude Code skills by [@huunghiaish](https://github.com/huunghia
 | [`ng:prompt-extractor`](./prompt-extractor/) | Reverse-engineer prompts from vibe-coded projects. Analyze original requirements vs AI-generated docs/code to extract reusable prompt sequences with purpose and execution order. |
 | [`ng:enhance-prompt`](./enhance-prompt/) | Transforms vague UI ideas into polished, optimized prompts. Forked from [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt). |
 | [`ng:seo`](./seo/) | SEO audit toolkit — full site, single page, content quality, technical, images, pre-upload audit. Forked from [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo). |
-| [`ng:port-manager`](./port-manager/) | Manage dev server port allocations across projects. Assigns unique 10-port blocks (30000+) per project to prevent conflicts. Includes session-start hook for auto-detection. |
+| [`ng:port-manager`](./port-manager/) | Manage dev server port allocations across projects. Assigns unique 10-port blocks (20000+) per project to prevent conflicts. Includes session-start hook for auto-detection. |
+| [`ng:frontend-slides`](./frontend-slides/) | Create stunning HTML presentations from scratch or PPT conversion. Vietnamese-optimized fork of [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) with proper diacritics, Vietnamese fonts, and bilingual UI. |
 
 ## Installation
 
@@ -60,6 +61,10 @@ Once installed, invoke skills via slash command in Claude Code:
 /ng:port-manager allocate
 /ng:port-manager list
 /ng:port-manager check
+
+# Create presentations
+/ng:frontend-slides
+/ng:frontend-slides convert presentation.pptx sang web
 ```
 
 Skills also activate automatically based on natural language:
