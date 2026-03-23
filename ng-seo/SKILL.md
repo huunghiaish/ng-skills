@@ -1,7 +1,7 @@
 ---
 name: ng:seo
-description: "SEO audit toolkit: full site audit, single page analysis, content quality, technical SEO, image optimization, pre-upload content audit. Use for SEO check, audit, analyze, optimize."
-argument-hint: "audit|page|content|technical|images|human-content <url|path>"
+description: "SEO audit toolkit: full site audit, single page analysis, content quality, technical SEO, image optimization, pre-upload content audit, SEO content rewrite. Use for SEO check, audit, analyze, optimize, rewrite."
+argument-hint: "audit|page|content|technical|images|human-content|rewrite <url|path>"
 allowed-tools: Read, Glob, Grep, Bash, Write, AskUserQuestion, WebFetch
 ---
 
@@ -21,6 +21,7 @@ If invoked without arguments, use `AskUserQuestion` to present operations:
 | `technical <url>` | Technical SEO (9 categories: crawl, index, security, CWV...) |
 | `images <url>` | Image optimization (alt text, size, format, lazy loading) |
 | `human-content <path\|url>` | Pre-upload content audit (local files or staging URL) |
+| `rewrite <file> [audit-report]` | Rewrite content to maximize SEO score (all 7 dimensions) |
 
 Present via `AskUserQuestion` with header "SEO Operation".
 
@@ -40,6 +41,7 @@ Each subcommand has detailed workflow in references/:
 | `technical` | `references/workflow-technical.md` | 9-category breakdown |
 | `images` | `references/workflow-images.md` | Image audit summary |
 | `human-content` | `references/workflow-human-content.md` | Pre-publish score card |
+| `rewrite` | `references/workflow-rewrite.md` | Optimized content + metadata |
 
 ## Shared Knowledge
 
@@ -74,7 +76,7 @@ All audits produce 0-100 scores. Priority levels:
 ## Scope & Security
 
 Handles: SEO auditing, content analysis, technical checks, image optimization,
-schema validation, E-E-A-T assessment, pre-upload content review.
+schema validation, E-E-A-T assessment, pre-upload content review, SEO content rewriting.
 
 Does NOT handle: code generation, deployment, link building, paid ads, social media.
 
