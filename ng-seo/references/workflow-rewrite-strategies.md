@@ -1,6 +1,9 @@
 # Rewrite Strategies by Dimension
+# Optimized for: Travel · Restaurant · Booking (Local Business / Vietnam)
 
-Fix strategies for each of the 7 SEO audit dimensions. Apply only to dimensions scoring < 70.
+Fix strategies for each of the 8 SEO audit dimensions. Apply only to dimensions scoring < 70.
+
+---
 
 ## 1. Heading Hierarchy (target: 90+)
 
@@ -13,42 +16,90 @@ Fix strategies for each of the 7 SEO audit dimensions. Apply only to dimensions 
 - Never skip levels (H1 → H3 without H2)
 - Include keyword variations in H2s naturally
 
-**Pattern:**
+**Pattern by subtype:**
 ```
-H1: [Primary keyword + compelling modifier]
-  H2: [Section with keyword variation]
-    H3: [Subsection detail]
-    H3: [Subsection detail]
-  H2: [Next section]
+recipe:
+  H1: [Primary keyword + modifier]
+    H2: Nguyên liệu
+      H3: Phần bột / Phần nhân / Ăn kèm
+    H2: Cách làm
+      H3: Bước 1–N
+    H2: Lưu ý / Mẹo
+
+travel-guide:
+  H1: [Destination + keyword]
+    H2: Tổng quan
+    H2: Địa điểm nổi bật
+      H3: [Place 1], [Place 2]...
+    H2: Kinh nghiệm di chuyển
+    H2: Ăn uống / Lưu trú
+    H2: FAQ
+
+restaurant-review:
+  H1: [Restaurant name + keyword]
+    H2: Không gian & Vị trí
+    H2: Thực đơn nổi bật
+    H2: Giá cả & Đặt bàn
+    H2: Nhận xét tổng thể
 ```
+
+---
 
 ## 2. Readability (target: 80+)
 
-**Diagnosis:** Word count vs page type minimum. Sentence length. Paragraph density.
+**Diagnosis:** Word count vs subtype minimum. Sentence length. Paragraph density.
 
-**Word count targets:**
-| Page Type | Minimum | Ideal |
-|-----------|---------|-------|
-| Blog | 1,500 | 2,000-2,500 |
-| Landing | 600 | 800-1,200 |
-| Product | 400 | 600-800 |
-| Service | 800 | 1,000-1,500 |
+**Word count targets by subtype:**
 
-**Expansion strategies (add, don't replace):**
+| Subtype | Minimum | Ideal |
+|---------|---------|-------|
+| `recipe` | 800 | 900–1,100 |
+| `travel-guide` | 1,000 | 1,200–1,800 |
+| `destination-review` | 600 | 700–900 |
+| `restaurant-review` | 500 | 600–800 |
+| `activity` | 600 | 700–900 |
+| `landing` | 600 | 800–1,000 |
+| `service` | 800 | 1,000–1,400 |
+| `booking` | 400 | 400–600 |
+| `news` | 400 | 400–600 |
 
-1. **Expand intro** — add context, history, cultural significance, why this topic matters
-2. **Add "Mẹo/Tips" section** — common mistakes, pro tips, troubleshooting
-3. **Add FAQ section** — 3-5 questions readers commonly ask (long-tail keyword capture)
-4. **Add comparison/variation** — regional variations, alternatives, customization options
-5. **Add nutrition/specs** — factual data section (calories, dimensions, specifications)
-6. **Expand existing steps** — add "why" explanations, not just "how"
-7. **Add "Lưu ý/Notes" section** — storage tips, shelf life, reheating instructions
+**Expansion strategies by subtype (add, don't replace):**
 
-**Readability rules:**
+**recipe:**
+1. Expand intro — history, cultural significance, regional variations
+2. Add "Mẹo chọn nguyên liệu" — how to pick fresh ingredients
+3. Add FAQ — "Làm sao giữ bánh giòn lâu?", "Có thể thay nước dừa bằng gì?"
+4. Expand steps with "why" explanations, not just "how"
+5. Add storage/reheating tips
+
+**travel-guide / destination-review:**
+1. Add destination overview — geography, best time to visit, vibe
+2. Add "Cách di chuyển" section — transport options, distances, cost
+3. Add "Kinh nghiệm thực tế" — first-person tips, common mistakes
+4. Add FAQ — "Có nên đặt trước không?", "Mùa nào đẹp nhất?"
+5. Add nearby attractions or day-trip suggestions
+
+**restaurant-review:**
+1. Expand atmosphere description — decor, noise level, seating
+2. Add dish-by-dish breakdown of standouts
+3. Add price range context — "ngon mà không đắt" framing
+4. Add parking, booking, hours info
+5. Compare to similar restaurants in the area
+
+**landing / service / booking:**
+1. Add social proof — testimonials, number of guests, ratings
+2. Expand benefits section — what makes this experience unique
+3. Add FAQ addressing objections
+4. Add clear booking/contact process steps
+
+**Readability rules (all subtypes):**
 - Sentences: avg 15-20 words, max 30
 - Paragraphs: 2-4 sentences
 - Use transition words between sections
 - Break walls of text with lists, subheadings, bold key phrases
+- Vietnamese tone: conversational ("cô bác", "bạn") preferred over formal
+
+---
 
 ## 3. Image SEO (target: 75+)
 
@@ -56,134 +107,211 @@ H1: [Primary keyword + compelling modifier]
 
 **Alt text formula:**
 ```
-[Descriptive action/subject] + [relevant detail] + [context keyword]
+[Descriptive subject] + [relevant detail] + [location/context keyword]
 ```
 
-**Examples:**
-- "Đĩa bánh xèo vàng giòn với nhân tôm thịt" (not "hình 1" or "banh-xeo.jpg")
-- "Dashboard showing monthly revenue chart" (not "screenshot" or "image")
+**Examples for travel/restaurant niche:**
+- "Bánh xèo xứ Trầm Nha Trang vàng giòn nhân tôm thịt"
+- "Không gian nhà hàng Nha Trang Xưa mang phong cách cổ xứ Trầm"
+- "Hồ bơi resort Nha Trang view biển"
 
 **Rules:**
-- 10-125 characters per alt text
-- Include keyword naturally in 1-2 image alts (not all)
+- 10–125 characters per alt text
+- Include primary keyword naturally in 1-2 image alts (not all)
+- Location keyword (e.g., "Nha Trang", "xứ Trầm") in at least 1 alt
 - Decorative images: suggest `alt=""`
 - Suggest WebP/AVIF format, <200KB, explicit width/height
+- For restaurant/travel: recommend minimum 3 images (dish/scene, detail, ambiance)
 
 **Output:** Table of image references → suggested alt text.
 
+---
+
 ## 4. Keyword Analysis (target: 85+)
 
-**Diagnosis:** Keyword in H1, first paragraph, density, semantic variations.
+**Diagnosis:** Keyword in H1, first paragraph, density, semantic variations, local terms.
 
 **Placement checklist:**
 - [ ] Primary keyword in H1
 - [ ] Primary keyword in first 100 words
 - [ ] Primary keyword in at least 1 H2
-- [ ] 3-5 semantic variations throughout
-- [ ] Density 1-3% (count occurrences / total words)
+- [ ] City/area keyword (e.g., "Nha Trang", "miền Trung") in H1 or first paragraph
+- [ ] 3–5 semantic variations throughout
+- [ ] Density 1–3% (count occurrences / total words)
 - [ ] No keyword stuffing (reads naturally)
+
+**Local keyword layer:**
+- Always combine primary keyword + location for travel/restaurant content
+- Example: "bánh xèo" → "bánh xèo Nha Trang", "bánh xèo xứ Trầm", "cách làm bánh xèo miền Trung"
+- Add district/neighborhood if relevant: "Nha Trang", "Khánh Hòa", "xứ Trầm"
 
 **Title tag formula (50-60 chars):**
 ```
-[Action/How-to] + [Primary Keyword] + [Compelling Modifier]
+[Action/Keyword] + [Location] + [Compelling Modifier]
 ```
 
 **Meta description formula (150-160 chars):**
 ```
-[Hook/Promise] + [Primary Keyword] + [Key Detail] + [CTA or Benefit]
+[Hook/Promise] + [Primary Keyword] + [Location detail] + [CTA or Benefit]
 ```
 
-**Long-tail expansion:** Add 2-3 long-tail variations naturally in content body, FAQ answers, and H3 headings.
+---
 
-## 5. E-E-A-T Signals (target: 80+)
+## 5. E-E-A-T Signals (target: 75+)
 
-**Diagnosis:** Check for author info, dates, sources, first-hand experience signals.
+*Lower weight (15%) for travel/food/booking — not YMYL. Focus on trust signals
+that matter for local discovery, not academic credentials.*
 
-**Required additions:**
+**Diagnosis:** Author info, dates, first-hand experience, original photos.
 
-### Author Attribution (Critical)
+**Priority by subtype:**
+
+| Signal | recipe | travel/review | restaurant | landing/booking |
+|--------|--------|---------------|------------|-----------------|
+| Author name | Recommended | Recommended | Recommended | Optional |
+| Author credentials | Optional | Optional | Optional | Not needed |
+| Publication date | Required | Required | Required | Required |
+| First-hand experience | Implied via photos | Required | Required | N/A |
+| Original photos | Required | Required | Required | Required |
+| Sources/references | Not needed | Optional | Not needed | Not needed |
+
+**Author attribution block:**
 ```markdown
----
 **Tác giả:** [Tên] — [Chức danh], [Tổ chức]
-**Ngày đăng:** [DD/MM/YYYY]
-**Cập nhật lần cuối:** [DD/MM/YYYY]
----
+**Ngày đăng:** DD/MM/YYYY | **Cập nhật:** DD/MM/YYYY
 ```
 
-### Experience Signals
-- Add first-person experience statement in intro ("Sau 10 năm...", "Qua kinh nghiệm...")
-- Reference specific details only someone with experience would know
-- Mention original photos/testing/methodology
+**Experience signals to add:**
+- First-person statements: "Qua nhiều năm nấu ăn tại...", "Trong chuyến thăm gần nhất..."
+- Specific details only someone with experience would know
+- Reference original photos taken on-site
 
-### Expertise Signals
-- Add "Về tác giả" section at bottom with credentials
-- Reference sources (cite 2-3 authoritative links)
-- Use precise, technical language appropriate for topic
+**"Về tác giả" section (recommended for blog/guide, optional for review):**
+```markdown
+### Về tác giả
+**[Tên]** — [Chức danh]. [1-2 câu bio ngắn về kinh nghiệm liên quan].
+```
 
-### Trust Signals
-- Publication date visible
-- "Last updated" date if content revised
-- Link to author profile page
-- Contact information or organization reference
+Never fabricate credentials — ask user for real info.
 
-**Ask user for:** Author name, title, credentials, organization. Never fabricate.
+---
 
-## 6. Schema Markup (target: 90+)
+## 6. Local SEO (target: 80+) ← NEW
+
+*Critical for travel/restaurant/booking — this is how local customers find you.*
+
+**Diagnosis:** Business name consistency, address/phone, city keyword, maps link, hours/booking info.
+
+**Checklist:**
+- [ ] Business name matches Google Business Profile exactly (no variations)
+- [ ] City/district keyword in H1 or first 100 words
+- [ ] Address present (if service/landing/restaurant page)
+- [ ] Phone number or booking link present
+- [ ] Opening hours mentioned (if applicable)
+- [ ] Price range mentioned (if applicable)
+- [ ] Link to Google Maps or booking platform
+- [ ] LocalBusiness / Restaurant / TouristAttraction schema (see Schema section)
+
+**NAP block (add to service/restaurant/landing pages):**
+```markdown
+**[Tên doanh nghiệp]**
+📍 [Địa chỉ đầy đủ], [Quận/Huyện], [Thành phố]
+📞 [Số điện thoại]
+🕐 [Giờ mở cửa]
+🔗 [Link đặt chỗ / Google Maps]
+```
+
+**City keyword integration:**
+- Mention city/area in first paragraph naturally
+- Use in at least 1 H2 (e.g., "Đặt bàn tại Nha Trang Xưa")
+- Include in meta description and title tag
+- Add to 1-2 image alt texts
+
+**Internal link requirements:**
+- Link to Google Maps listing
+- Link to booking/reservation page
+- Link to related content (other dishes, nearby attractions, cooking class page)
+
+---
+
+## 7. Schema Markup (target: 90+)
 
 **Diagnosis:** Check if JSON-LD, OG tags, Twitter Card exist.
 
-**Auto-detect schema type:**
-| Content Pattern | Schema Type |
-|----------------|-------------|
-| Ingredients + steps | Recipe |
-| How-to steps (non-food) | Article (HowTo deprecated) |
-| Product description + price | Product |
-| Business info + location | LocalBusiness |
-| Blog post / article | Article or BlogPosting |
-| FAQ section | Article (FAQPage restricted) |
-| Event details | Event |
+**Auto-detect schema type by subtype:**
 
-**Generate all three:**
-1. JSON-LD (primary — in `<script type="application/ld+json">`)
-2. OG tags (og:title, og:description, og:image, og:url, og:type, og:locale)
-3. Twitter Card (twitter:card, twitter:title, twitter:description, twitter:image)
+| Subtype | Schema Type |
+|---------|-------------|
+| `recipe` | `Recipe` |
+| `restaurant-review` / `landing` (restaurant) | `Restaurant` + `LocalBusiness` |
+| `travel-guide` / `destination-review` | `TouristAttraction` or `TouristDestination` |
+| `activity` | `ExperienceActivity` or `Event` |
+| `booking` / event announcement | `Event` |
+| `service` | `LocalBusiness` + `Service` |
+| `news` | `NewsArticle` |
 
-**Validation:** @context = "https://schema.org", @type valid (non-deprecated), all required props present, URLs absolute, dates ISO 8601.
-
-## 7. Content Structure (target: 85+)
-
-**Diagnosis:** Check logical flow, lists, ToC, internal links, CTA.
-
-**Fixes:**
-
-### Table of Contents
-Add if word count > 1,500:
-```markdown
-## Mục lục
-- [Section 1](#section-1)
-- [Section 2](#section-2)
-...
+**LocalBusiness schema block (for restaurant/service/landing):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "[Tên doanh nghiệp]",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[Địa chỉ]",
+    "addressLocality": "Nha Trang",
+    "addressRegion": "Khánh Hòa",
+    "addressCountry": "VN"
+  },
+  "telephone": "[SĐT]",
+  "url": "[URL trang chủ]",
+  "servesCuisine": "Vietnamese",
+  "priceRange": "$$"
+}
 ```
 
-### Internal Links
-- Add 3-5 per 1,000 words
-- Use descriptive anchor text (not "click here")
-- Mark with `[INTERNAL_LINK: topic]` placeholder if URLs unknown
+**Generate all three outputs:**
+1. JSON-LD (primary — in `<script type="application/ld+json">`)
+2. OG tags (og:title, og:description, og:image, og:url, og:type, og:locale = vi_VN)
+3. Twitter Card (twitter:card, twitter:title, twitter:description, twitter:image)
 
-### Lists & Formatting
-- Ingredients → unordered list (bullet points)
+**Validation:** @context = "https://schema.org", @type valid, all required props present,
+URLs absolute, dates ISO 8601.
+
+---
+
+## 8. Content Structure (target: 85+)
+
+**Diagnosis:** Logical flow, lists, ToC, internal links, CTA.
+
+**Table of Contents — subtype rules:**
+- `travel-guide` >1,200 words → add ToC ✓
+- All other subtypes → skip ToC ✗
+- Never add ToC to recipe, review, booking, news
+
+**Internal links (2-5 per post):**
+- Use descriptive anchor text (not "click here" or "xem thêm")
+- Mark with `[INTERNAL_LINK: topic]` placeholder if URLs unknown
+- For restaurant/travel: always link to booking page + Google Maps
+
+**Lists & Formatting:**
+- Ingredients → unordered list (bullet)
 - Steps → ordered list (numbered)
 - Comparisons → table
-- Key points → bold or callout
+- Key facts (hours, price, address) → definition list or bold label
 
-### FAQ Section
-Add 3-5 questions:
-- Use natural question phrasing ("Làm sao...?", "Có thể...?", "Tại sao...?")
-- Answer in 2-4 sentences each
+**FAQ Section (add for recipe, travel-guide, restaurant-review):**
+- 3-5 questions, natural phrasing
 - Include long-tail keywords in questions
+- Answer in 2-4 sentences each
 - Place after main content, before conclusion
 
-### CTA
-- Verify CTA exists (subscribe, share, comment, buy, visit)
-- Place primary CTA after conclusion
-- Optional secondary CTA mid-content
+**CTA rules by subtype:**
+
+| Subtype | CTA type | Placement |
+|---------|----------|-----------|
+| `recipe` | Cooking class / related recipe | End of article |
+| `travel-guide` | Book tour / visit attraction | End + mid-content |
+| `restaurant-review` | Book table / view menu | End of article |
+| `landing` / `service` | Book now / Contact | Above fold + end |
+| `booking` | Reserve / Register | Prominent, multiple |

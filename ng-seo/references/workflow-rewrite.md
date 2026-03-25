@@ -1,6 +1,7 @@
 # SEO Content Rewrite
+# Optimized for: Travel · Restaurant · Booking (Local Business / Vietnam)
 
-Rewrite content to maximize SEO scores across all 7 audit dimensions.
+Rewrite content to maximize SEO scores across all 8 audit dimensions.
 
 ## Step 1 — Gather Input
 
@@ -11,11 +12,25 @@ If missing, use `AskUserQuestion`:
 | Question | Options |
 |----------|---------|
 | Content file | .docx, .md, .txt, .html |
-| Audit report | Optional: path to ng:seo audit report |
-| Page type | blog (1,500 min) / landing (600) / product (400) / service (800) |
+| Audit report | Optional: path to seo audit report |
+| Content subtype | See subtype table below |
 | Primary keyword | Free text |
 | Language | Vietnamese (default) / English |
 | Author info | Name, title, credentials (for E-E-A-T) |
+
+### Content Subtype Reference
+
+| Subtype | Code | Min Words | ToC |
+|---------|------|-----------|-----|
+| Recipe / Công thức | `recipe` | 800 | ✗ |
+| Travel guide | `travel-guide` | 1,000 | ✓ if >1,200 |
+| Destination review | `destination-review` | 600 | ✗ |
+| Restaurant review | `restaurant-review` | 500 | ✗ |
+| Activity / Trải nghiệm | `activity` | 600 | ✗ |
+| Landing page | `landing` | 600 | ✗ |
+| Service page | `service` | 800 | ✗ |
+| Booking / Event | `booking` | 400 | ✗ |
+| News / Tin tức | `news` | 400 | ✗ |
 
 ## Step 2 — Read Content
 
@@ -30,7 +45,7 @@ for p in doc.paragraphs:
 "
 ```
 
-**For .md/.txt/.html:** Read directly. **Audit report:** Parse 7-dimension scores.
+**For .md/.txt/.html:** Read directly. **Audit report:** Parse 8-dimension scores.
 
 ## Step 3 — Analyze Gaps
 
@@ -38,12 +53,13 @@ Score each dimension 0-100. Load `references/workflow-rewrite-strategies.md`.
 
 Priority (fix worst first):
 1. **Heading Hierarchy** (15%) — structural foundation
-2. **Readability** (15%) — word count, flow
-3. **E-E-A-T Signals** (20%) — author, credentials, dates
-4. **Keyword Analysis** (20%) — placement, density, semantic
-5. **Content Structure** (10%) — ToC, links, CTA
-6. **Image SEO** (10%) — alt text
-7. **Schema** (10%) — JSON-LD, OG, Twitter
+2. **Readability** (15%) — word count vs subtype target, flow
+3. **E-E-A-T Signals** (15%) — author, dates (lower weight for non-YMYL)
+4. **Keyword Analysis** (20%) — placement, density, semantic + local keywords
+5. **Local SEO** (10%) — NAP, city keyword, maps link, hours/booking
+6. **Content Structure** (10%) — ToC (subtype-dependent), links, CTA
+7. **Image SEO** (10%) — alt text
+8. **Schema** (10%) — JSON-LD, OG, Twitter
 
 ## Step 4 — Rewrite Content
 
@@ -61,9 +77,10 @@ Apply strategies from `references/workflow-rewrite-strategies.md` for dimensions
 
 1. **Title tag** (50-60 chars, keyword near start)
 2. **Meta description** (150-160 chars, with CTA)
-3. **JSON-LD schema** (auto-detect type — see `references/schema-templates.md`)
+3. **JSON-LD schema** (auto-detect from subtype — see `references/schema-templates.md`)
 4. **OG tags** + **Twitter Card** tags
 5. **Image alt text** suggestions
+6. **Local SEO block** (NAP, if service/landing/restaurant subtype)
 
 Use `references/workflow-rewrite-output.md` for templates.
 
@@ -114,7 +131,7 @@ Generate 4 output files:
 |------|---------|
 | `{slug}-seo-optimized.md` | Rewritten content with images |
 | `{slug}-seo-optimized.docx` | Word export with embedded images |
-| `{slug}-seo-metadata.md` | Title, meta, JSON-LD, OG, Twitter, alt text |
+| `{slug}-seo-metadata.md` | Title, meta, JSON-LD, OG, Twitter, alt text, local SEO block |
 | `seo-rewrite-{date}-{slug}.md` | Before/after score report |
 
 ### Report template (seo-rewrite-{date}-{slug}.md)
@@ -123,6 +140,7 @@ Generate 4 output files:
 # SEO Rewrite Report — {Title}
 
 **Source:** {original filename}
+**Subtype:** {content subtype code}
 **Author:** {author}
 **Date:** {date}
 
@@ -135,13 +153,14 @@ Readability: XX  →  XX    (+XX)
 Images:      XX  →  XX    (+XX)
 Keywords:    XX  →  XX    (+XX)
 E-E-A-T:     XX  →  XX    (+XX)
+Local SEO:   XX  →  XX    (+XX)
 Schema:      XX  →  XX    (+XX)
 Structure:   XX  →  XX    (+XX)
 ─────────────────────────────────────
 Weighted:    XX  →  XX    (+XX)
 
 Word count: XXX → XXX (+XXX)
-Target: X,XXX ({page type})
+Target: X,XXX (subtype: {code})
 Status: ✅ Met / ❌ XXX short
 
 ## Changes Applied
