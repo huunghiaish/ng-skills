@@ -6,12 +6,12 @@ A collection of Claude Code skills by [@huunghiaish](https://github.com/huunghia
 
 | Skill | Description |
 |-------|-------------|
-| [`ng:audit-product-feature`](./audit-product-feature/) | Audit software projects for feature completeness, edge cases, and business logic risks. Compares PRD/SRS against actual code, detects missing edge cases, generates scored reports. |
-| [`ng:prompt-extractor`](./prompt-extractor/) | Reverse-engineer prompts from vibe-coded projects. Analyze original requirements vs AI-generated docs/code to extract reusable prompt sequences with purpose and execution order. |
-| [`ng:enhance-prompt`](./enhance-prompt/) | Transforms vague UI ideas into polished, optimized prompts. Forked from [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt). |
-| [`ng:seo`](./ng-seo/) | SEO audit toolkit — full site, single page, content quality, technical, images, pre-upload audit, SEO content rewrite. Forked from [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo). |
-| [`ng:port-manager`](./port-manager/) | Manage dev server port allocations across projects. Assigns unique 10-port blocks (20000+) per project to prevent conflicts. Includes session-start hook for auto-detection. |
-| [`ng:frontend-slides`](./frontend-slides/) | Create stunning HTML presentations from scratch or PPT conversion. Vietnamese-optimized fork of [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) with proper diacritics, Vietnamese fonts, and bilingual UI. |
+| [`ng:audit-product-feature`](./ng-audit-product-feature/) | Audit software projects for feature completeness, edge cases, and business logic risks. Compares PRD/SRS against actual code, detects missing edge cases, generates scored reports. |
+| [`ng:prompt-extractor`](./ng-prompt-extractor/) | Reverse-engineer prompts from vibe-coded projects. Analyze original requirements vs AI-generated docs/code to extract reusable prompt sequences with purpose and execution order. |
+| [`ng:enhance-prompt`](./ng-enhance-prompt/) | Transforms vague UI ideas into polished, optimized prompts. Forked from [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills/tree/main/skills/enhance-prompt). |
+| [`ng:seo`](./ng-seo/) | SEO audit toolkit — full site, single page, content quality, technical, images, pre-upload audit, SEO content rewrite, tracking plan (Umami+Clarity), tracking report. Forked from [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo). |
+| [`ng:port-manager`](./ng-port-manager/) | Manage dev server port allocations across projects. Assigns unique 10-port blocks (20000+) per project to prevent conflicts. Includes session-start hook for auto-detection. |
+| [`ng:frontend-slides`](./ng-frontend-slides/) | Create stunning HTML presentations from scratch or PPT conversion. Vietnamese-optimized fork of [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) with proper diacritics, Vietnamese fonts, and bilingual UI. |
 
 ## Installation
 
@@ -21,7 +21,7 @@ Available across all projects:
 
 ```bash
 git clone https://github.com/huunghiaish/ng-skills.git /tmp/ng-skills
-cp -r /tmp/ng-skills/*/ ~/.claude/skills/
+cp -r /tmp/ng-skills/ng-*/ ~/.claude/skills/
 rm -rf /tmp/ng-skills
 ```
 
@@ -31,9 +31,11 @@ Available only in a specific project:
 
 ```bash
 git clone https://github.com/huunghiaish/ng-skills.git /tmp/ng-skills
-cp -r /tmp/ng-skills/*/ /your/project/.claude/skills/
+cp -r /tmp/ng-skills/ng-*/ /your/project/.claude/skills/
 rm -rf /tmp/ng-skills
 ```
+
+> **Note:** Only `ng-*/` folders are skills. Other directories (`plans/`, `docs/`) are internal project files.
 
 ## Usage
 
